@@ -1,0 +1,123 @@
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.transition,
+.transform,
+.animation {
+    border: 1px solid #999;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+}
+
+.b1 {
+    background-color: #80E1D4;
+}
+
+.b2 {
+    background-color: red;
+}
+
+.b3 {
+    background-color: black;
+}
+
+.b4 {
+    background-color: blanchedalmond;
+}
+
+.b5 {
+    background-color: green;
+}
+
+/******************************************
+Transition 
+******************************************/
+
+.transition .b1{
+    transition: width 1000ms ease-in-out;
+}
+
+.transition .b1:hover{
+    width: 400px;
+}
+
+.transition .b2 {
+    transition: width 1000ms, height 500ms;
+    transition-timing-function: ease-out;
+    transition-delay: .5s;
+}
+
+.transition .b2:hover {
+    width: 250px;
+    height: 250px;
+
+}
+.transition .b3 {
+    transition: transform 0.5s cubic-bezier(.25,-0.6,.6,1.08) 0.5s;
+}
+
+.transition .b3:hover {
+    transform: rotate(80deg);
+}
+
+.transition .b4 {
+    transition: all 1s ease-in;
+}
+
+.transition .b4:hover {
+    background-color: yellow;
+    border-radius: 40px;
+    transform: rotate(90deg);
+}
+
+/******************************************
+Transform
+******************************************/
+
+.transform .box {
+    transition: all 1s ease-in;
+}
+
+.transform .b1:hover {
+    transform: translate(20px, 30px);
+}
+
+.transform .b2:hover {
+    transform: scale(1.2)
+}
+
+.transform .b3:hover {
+    transform: rotate(45deg);
+    transform-origin: right;
+}
+
+.transform .b4:hover {
+    transform: skewX(10deg) skewY(10deg);
+}
+
+/******************************************
+animation
+******************************************/
+
+@keyframes changeColor {
+    from{
+        background-color: purple;
+    }
+    to {
+        background-color: cyan;
+    }
+}
+
+.animation .b1 {
+    animation-name: changeColor;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
